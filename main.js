@@ -1,13 +1,3 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
 // Quiz Logic
 const quizStates = [
     {
@@ -49,7 +39,7 @@ function renderQuestion() {
 
     state.options.forEach(opt => {
         const btn = document.createElement('button');
-        btn.className = 'quiz-btn';
+        btn.className = 'w-full py-4 border border-primary text-primary font-label-caps text-label-caps hover:bg-primary hover:text-white transition-colors duration-400';
         btn.textContent = opt.text;
         btn.onclick = () => handleAnswer(opt.value);
         optionsEl.appendChild(btn);
@@ -66,18 +56,18 @@ function showResult() {
     quizForm.classList.add('hidden');
     quizResult.classList.remove('hidden');
 
-    // Simple mock logic for recommendation
     let recommendation = "Golden Vanilla";
     if (userPreferences.includes("romantic") || userPreferences.includes("floral")) {
         recommendation = "Velvet Rose";
     } else if (userPreferences.includes("mysterious") || userPreferences.includes("woody")) {
         recommendation = "Midnight Oud";
+    } else {
+        recommendation = "L'Air Pur";
     }
 
     resultTitle.textContent = recommendation;
 }
 
-// Attach reset function to window so the HTML onclick can access it
 window.resetQuiz = function() {
     currentQuestion = 0;
     userPreferences = [];
@@ -87,4 +77,6 @@ window.resetQuiz = function() {
 };
 
 // Initialize quiz
-renderQuestion();
+if(quizForm) {
+    renderQuestion();
+}

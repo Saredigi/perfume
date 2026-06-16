@@ -1,110 +1,505 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rose & Oud | Luxury Fragrance Boutique</title>
-    <meta name="description" content="Discover your signature scent at Rose & Oud Fragrance Boutique. Luxurious, timeless, sensual perfumes.">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>L'ESSENCE | Haute Parfumerie</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e4e2de",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#524343",
+                      "surface-container": "#efeeea",
+                      "secondary-fixed": "#ffdad9",
+                      "surface-variant": "#e4e2de",
+                      "surface-container-high": "#eae8e4",
+                      "primary-container": "#d48b8b",
+                      "inverse-primary": "#ffb3b2",
+                      "inverse-surface": "#30312e",
+                      "tertiary": "#815152",
+                      "on-surface": "#1b1c1a",
+                      "on-background": "#1b1c1a",
+                      "on-secondary-fixed": "#2f1314",
+                      "on-error-container": "#93000a",
+                      "secondary": "#7b5455",
+                      "tertiary-fixed": "#ffdad9",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "outline": "#857372",
+                      "on-primary-fixed": "#380c0f",
+                      "on-tertiary-container": "#522a2b",
+                      "primary-fixed": "#ffdad9",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#f5b7b7",
+                      "primary": "#8a4d4e",
+                      "on-tertiary-fixed-variant": "#663a3b",
+                      "secondary-container": "#fecbcb",
+                      "on-secondary-fixed-variant": "#613d3e",
+                      "surface-tint": "#8a4d4e",
+                      "secondary-fixed-dim": "#ecbaba",
+                      "on-primary-container": "#592527",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f5f3ef",
+                      "primary-fixed-dim": "#ffb3b2",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed-variant": "#6e3637",
+                      "on-secondary-container": "#7a5354",
+                      "surface": "#fbf9f5",
+                      "tertiary-container": "#c99090",
+                      "outline-variant": "#d7c2c1",
+                      "surface-dim": "#dbdad6",
+                      "inverse-on-surface": "#f2f0ed",
+                      "background": "#fbf9f5",
+                      "on-tertiary-fixed": "#331012",
+                      "surface-bright": "#fbf9f5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "container-max": "1280px",
+                      "margin-desktop": "64px",
+                      "gutter": "32px",
+                      "section-gap": "120px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Playfair Display"],
+                      "headline-sm": ["Playfair Display"],
+                      "label-caps": ["DM Sans"],
+                      "body-lg": ["DM Sans"],
+                      "display-lg": ["Playfair Display"],
+                      "display-lg-mobile": ["Playfair Display"],
+                      "body-md": ["DM Sans"]
+              },
+              "fontSize": {
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                      "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-popup {
+            animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .custom-shadow {
+            box-shadow: 0 20px 40px -15px rgba(42, 38, 36, 0.06);
+        }
+        /* Custom scrollbar for a luxury feel */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #fbf9f5; }
+        ::-webkit-scrollbar-thumb { background: #d7c2c1; }
+    </style>
 </head>
-<body>
-    <header class="navbar">
-        <a href="#" class="logo">Rose & Oud</a>
-        <nav>
-            <ul>
-                <li><a href="#featured">Featured</a></li>
-                <li><a href="#quiz">Find Your Scent</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-container selection:text-white">
+<!-- Global Shader Background (Fixed) -->
+<div class="fixed inset-0 z-[-1] pointer-events-none opacity-40">
+<!-- STITCH_SHADER_START:ANIMATION_2 class="w-full h-full" -->
+<div class="w-full h-full" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Defy Gravity with Our Signature Scents</h1>
-            <p>Experience the ethereal, romantic, and cinematic luxury of Rose & Oud.</p>
-            <a href="#featured" class="cta-btn">Shop the Collection</a>
-        </div>
-        <div class="hero-image-container">
-            <img src="assets/luxury_perfume_bottle.png" alt="Floating luxury perfume bottle in baby pink light" class="hero-image float-animation">
-        </div>
-    </section>
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
 
-    <section id="featured" class="featured-collection">
-        <h2>Featured Collection</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-image-placeholder gold-gradient"></div>
-                <h3>Midnight Oud</h3>
-                <p class="notes">Oud, Rose, Sandalwood</p>
-                <p class="price">$250.00</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <div class="product-image-placeholder pink-gradient"></div>
-                <h3>Velvet Rose</h3>
-                <p class="notes">Damascus Rose, Peony, Musk</p>
-                <p class="price">$195.00</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product-card">
-                <div class="product-image-placeholder cream-gradient"></div>
-                <h3>Golden Vanilla</h3>
-                <p class="notes">Madagascar Vanilla, Amber, Tonka Bean</p>
-                <p class="price">$180.00</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-        </div>
-    </section>
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `
+precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
 
-    <section id="quiz" class="scent-quiz">
-        <div class="quiz-container">
-            <h2>Find Your Scent</h2>
-            <p>Answer a few questions to discover your perfect fragrance.</p>
-            
-            <div id="quiz-form" class="quiz-card">
-                <h3 id="quiz-question">What mood do you want to evoke?</h3>
-                <div class="quiz-options">
-                    <!-- Options populated by JS -->
-                </div>
-            </div>
-            
-            <div id="quiz-result" class="quiz-card hidden">
-                <h3>Your Signature Scent is:</h3>
-                <h2 id="result-title">Velvet Rose</h2>
-                <p>We recommend a sample kit to explore similar notes.</p>
-                <button class="cta-btn" onclick="resetQuiz()">Retake Quiz</button>
-            </div>
-        </div>
-    </section>
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Create multiple sine-wave layers for a "fluid" feel
+    float wave1 = sin(uv.x * 2.0 + u_time * 0.5) * 0.5 + 0.5;
+    float wave2 = sin(uv.y * 3.0 - u_time * 0.7) * 0.5 + 0.5;
+    float wave3 = sin((uv.x + uv.y) * 2.5 + u_time * 0.4) * 0.5 + 0.5;
+    
+    float mixFactor = (wave1 + wave2 + wave3) / 3.0;
+    
+    // Pink to Cream palette
+    vec3 colorPink = vec3(0.831, 0.545, 0.545); // #d48b8b
+    vec3 colorCream = vec3(0.984, 0.976, 0.961); // #fbf9f5
+    
+    vec3 finalColor = mix(colorCream, colorPink, mixFactor * 0.4);
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}
+`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
 
-    <footer id="about">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Rose & Oud</h4>
-                <p>Luxurious, sensual, timeless fragrances.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Customer Experience</h4>
-                <ul>
-                    <li>Returns within 14 days (unopened items)</li>
-                    <li>Domestic Shipping: 3-5 business days</li>
-                    <li>International: 7-14 business days</li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contact Us</h4>
-                <p>Email: experience@roseandoud.com</p>
-                <p>Response within 4 business hours</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Rose & Oud Fragrance Boutique. All rights reserved.</p>
-        </div>
-    </footer>
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
 
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_2 -->
+</div>
+<!-- Navigation Shell -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto bg-surface/80 backdrop-blur-md">
+<div class="font-headline-md text-headline-md tracking-widest text-primary">L'ESSENCE</div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1" href="#collections">Collections</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-400" href="#quiz">Find Your Scent</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-400" href="#about">Our Story</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="hover:opacity-70 transition-opacity duration-400">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-400">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen flex flex-col items-center justify-center text-center px-margin-mobile">
+<div class="max-w-4xl space-y-8 reveal active">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.3em]">PARFUMS DE LUXE</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight italic">Essence of Aura</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto opacity-80">
+                An olfactory journey through memory and emotion, crafted with the rarest essences from the heart of Grasse.
+            </p>
+<div class="pt-8">
+<a class="inline-block bg-primary-container text-white px-12 py-5 font-label-caps text-label-caps hover:bg-primary transition-all duration-500 tracking-widest uppercase" href="#collections">
+                    Explore the Collection
+                </a>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce opacity-40">
+<span class="font-label-caps text-[10px] tracking-widest mb-2">SCROLL</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</header>
+<main>
+<!-- The Art of Scent (Story Section) -->
+<section id="about" class="py-section-gap px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="grid md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 reveal">
+<h2 class="font-headline-md text-headline-md mb-8">The Art of Scent</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 leading-relaxed">
+                        At L'ESSENCE, we believe a fragrance is more than a scent—it is a signature of the soul. Each flacon is a masterpiece of glasswork housing a complex symphony of top, heart, and base notes.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant/80 italic mb-8">
+                        "Luxury is the ease of a t-shirt in a very expensive dress, but in fragrance, it is the silence of the soul speaking through petals."
+                    </p>
+<a class="inline-flex items-center font-label-caps text-label-caps text-primary border-b border-primary pb-1 group" href="#">
+                        READ OUR MANIFESTO
+                        <span class="material-symbols-outlined ml-2 text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="md:col-span-6 md:col-start-7 reveal">
+<div class="aspect-[4/5] relative">
+<img alt="Luxury Perfume" class="w-full h-full object-cover custom-shadow" src="assets/luxury_perfume_bottle.png"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Curated Collections (Grid) -->
+<section class="py-section-gap bg-surface-container-low px-margin-desktop" id="collections">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-md text-headline-md mb-4">Curated Collections</h2>
+<p class="font-label-caps text-label-caps text-primary uppercase">Find your signature aura</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="reveal">
+<div class="bg-surface p-6 group cursor-pointer custom-shadow transition-transform duration-700 hover:-translate-y-2">
+<div class="aspect-[3/4] overflow-hidden mb-6 relative">
+<img alt="Aube Rosée" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="High-fashion photography of a delicate perfume bottle titled Aube Rosee. The bottle features a gold-toned cap and is surrounded by floating pink rose petals and soft morning mist. The background is a gradient of soft peach and cream colors. The lighting is bright and airy, evoking the feeling of a luxurious sunrise in a botanical garden." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtCQIXwdJ89F4RbLb5iL6h2GvquBJe16-Qn7L4SxpJa6pPuzEeDbWdTb_IDQ49RkklQzFTM0Gx2zQbiC-veT-QH-dW2_6AaiOsvOazgYWRHQpW9ojTDg8ZG5S1kM4g8URv2FxWBeeRMLD9LiYKIHuDMz84hOG6unxnokrSUstzb9KJ4zx2ZZXw9Mc0RMTFXUbWwc2zlsU489mfBKYWMvwAFQ4REIaO3TkBWd0hBxJ65baaPNjxcIVhyzZjAW0sgoOQd687x208fJY"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm mb-2">Aube Rosée</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase">Bergamot · Damask Rose · Musk</p>
+<span class="font-body-md text-primary">$185.00</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="reveal" style="transition-delay: 100ms;">
+<div class="bg-surface p-6 group cursor-pointer custom-shadow transition-transform duration-700 hover:-translate-y-2">
+<div class="aspect-[3/4] overflow-hidden mb-6 relative">
+<img alt="Nuit de Velours" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A moody, elegant product shot of a dark-toned perfume bottle titled Nuit de Velours. It sits atop a draped velvet cloth of deep burgundy. Warm, golden candlelight flickers in the background, creating a rich bokeh effect. The atmosphere is intimate, nocturnal, and seductive, emphasizing scents of oud and sandalwood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1O1c7NBJdMMaocHrfsdBws5D8t6oAA3NdnUDWLZO_2qpwfxAxB_s1WlQ43-tSXSBXfXjZGo9YGV8qNv_9HGu3BsRRPVm_7qLl9hliXfgh8WLTwYSlqQ4KrQcITje-0DXyxGqvB3NUfAWuQgwKjLMi6nmPSWZGNde0YiR6zOIVMABliB7ch02zHmDEeP52N4kxbdREFQQSyzhNJrkIWI_5Wf4f9ggsHrahY6mdArvVjnMDO-c9PnaoniKaxIBJXBjWZJ7KRyejpTM"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm mb-2">Nuit de Velours</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase">Black Oud · Saffron · Incense</p>
+<span class="font-body-md text-primary">$210.00</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="reveal" style="transition-delay: 200ms;">
+<div class="bg-surface p-6 group cursor-pointer custom-shadow transition-transform duration-700 hover:-translate-y-2">
+<div class="aspect-[3/4] overflow-hidden mb-6 relative">
+<img alt="L'Air Pur" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="A minimalist product image of a clear glass perfume bottle called L'Air Pur. The bottle is placed on a glass table which reflects a clear blue sky and white wispy clouds. The lighting is crisp and natural, highlighting the transparency and purity of the fragrance. The overall palette is white, light blue, and silver, suggesting freshness and marine notes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4739UWMnc6M8c9fkW3ObMmxh3A4VicSDM90kayCgUYjQCYAYhEF4x0L8GJkCptCgVzjWn7z4C7Q3fByv1d8LF83vowiQFlOEnerzrJe5Eny6V05MHU9KayPN9UKE3CnTy0FCw9IQExfqgdbleuP4pQCwnwG45wqQGB2mzpvAyXRVYkYYdM2wtUXG8455g0crcPqX9sRy7J78vChSBfnXtdRrhajN0Rzc4pDyRTCLsVn5jq4BbrAkmasZlwPGubO9YN98lJYkzk9U"/>
+<div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="text-center">
+<h3 class="font-headline-sm text-headline-sm mb-2">L'Air Pur</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-4 uppercase">Sea Salt · Sage · White Tea</p>
+<span class="font-body-md text-primary">$175.00</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Find Your Scent Quiz -->
+<section id="quiz" class="py-section-gap bg-surface px-margin-desktop">
+<div class="max-w-container-max mx-auto text-center reveal">
+    <span class="material-symbols-outlined text-4xl text-primary mb-6">science</span>
+    <h2 class="font-headline-md text-headline-md mb-4">Find Your Scent</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+        Answer a few questions to discover your perfect fragrance signature.
+    </p>
+    
+    <div id="quiz-form" class="bg-surface-container-low p-10 max-w-xl mx-auto custom-shadow transition-transform duration-700">
+        <h3 id="quiz-question" class="font-headline-sm text-headline-sm mb-8">What mood do you want to evoke?</h3>
+        <div class="quiz-options flex flex-col gap-4">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+    
+    <div id="quiz-result" class="bg-surface-container-low p-10 max-w-xl mx-auto custom-shadow hidden transition-transform duration-700">
+        <h3 class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-4">Your Signature Scent is</h3>
+        <h2 id="result-title" class="font-headline-md text-headline-md mb-6">Velvet Rose</h2>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-8">We recommend a sample kit to explore similar notes.</p>
+        <button class="bg-primary-container text-white px-10 py-4 font-label-caps text-label-caps hover:bg-primary transition-colors tracking-widest" onclick="resetQuiz()">
+            RETAKE QUIZ
+        </button>
+    </div>
+</div>
+</section>
+
+<!-- Newsletter / Rituals -->
+<section class="py-section-gap px-margin-desktop flex flex-col items-center text-center">
+<div class="max-w-2xl reveal">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">local_florist</span>
+<h2 class="font-headline-md text-headline-md mb-6">The Olfactory Society</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                    Receive invitations to private scent launches, artisan profiles, and the secrets of layering essences.
+                </p>
+<form class="w-full max-w-md mx-auto space-y-4">
+<div class="relative">
+<input class="w-full bg-transparent border-b border-primary/30 py-4 focus:outline-none focus:border-primary font-label-caps text-label-caps placeholder:text-on-surface-variant/40" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+</div>
+<button class="w-full py-4 border border-primary text-primary font-label-caps text-label-caps hover:bg-primary hover:text-white transition-colors duration-400" type="submit">
+                        JOIN THE SOCIETY
+                    </button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full px-margin-desktop py-section-gap flex flex-col md:flex-row justify-between items-center border-t border-outline-variant/30 bg-surface-container-low">
+<div class="flex flex-col items-center md:items-start space-y-4 mb-8 md:mb-0">
+<div class="font-headline-sm text-headline-sm text-primary">L'ESSENCE</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs text-center md:text-left">
+                Artisan perfumes crafted with intention and the world's most precious botanicals.
+            </p>
+</div>
+<div class="flex flex-col items-center md:items-end space-y-6">
+<div class="font-body-md text-body-md text-on-surface-variant text-center md:text-right space-y-1">
+    <p class="font-label-caps text-primary uppercase mb-2">Customer Experience</p>
+    <p>14-Day Returns (Unopened)</p>
+    <p>Domestic Shipping: 3-5 Business Days</p>
+    <p>International Shipping: 7-14 Business Days</p>
+    <p>Email Support Response: within 4 hours</p>
+</div>
+<div class="flex space-x-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Privacy</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Terms</a>
+</div>
+<div class="font-label-caps text-[10px] text-tertiary tracking-widest uppercase">
+                © 2026 L'ESSENCE PARFUMERIE. ALL RIGHTS RESERVED.
+            </div>
+</div>
+<div class="flex space-x-6 mt-8 md:mt-0">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">photo_camera</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-colors">mail</span>
+</div>
+</footer>
+<!-- Timed Welcome Gift Popup -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-surface/40 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-700" id="welcome-popup">
+<div class="bg-surface max-w-lg w-full p-12 custom-shadow relative animate-popup">
+<button class="absolute top-6 right-6 text-on-surface-variant hover:text-primary transition-colors" onclick="closePopup()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="text-center space-y-6">
+<span class="font-label-caps text-label-caps text-primary tracking-[0.2em]">EXCLUSIVE WELCOME</span>
+<h2 class="font-headline-md text-headline-md">10% Welcome Gift</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Unlock your exclusive invitation. Be the first to experience our newest scent chapters and seasonal olfactory edits.
+                </p>
+<div class="pt-4">
+<button class="bg-primary-container text-white px-10 py-4 font-label-caps text-label-caps hover:bg-primary transition-colors tracking-widest">
+                        CLAIM YOUR GIFT
+                    </button>
+<p class="mt-4 font-label-caps text-[10px] text-on-surface-variant/60 cursor-pointer hover:underline" onclick="closePopup()">
+                        NO THANK YOU, I PREFER TO BROWSE
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+        // Intersection Observer for Scroll Reveals
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Popup Logic
+        const popup = document.getElementById('welcome-popup');
+        
+        function showPopup() {
+            if (!localStorage.getItem('lessence_popup_dismissed')) {
+                popup.classList.remove('opacity-0', 'pointer-events-none');
+                popup.classList.add('opacity-100', 'pointer-events-auto');
+            }
+        }
+
+        function closePopup() {
+            popup.classList.add('opacity-0', 'pointer-events-none');
+            popup.classList.remove('opacity-100', 'pointer-events-auto');
+            localStorage.setItem('lessence_popup_dismissed', 'true');
+        }
+
+        // Trigger popup after 3 seconds
+        setTimeout(showPopup, 3000);
+
+        // Simple smooth scroll behavior for modern browsers is handled by CSS, 
+        // but adding an interaction for the shop buttons.
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
     <script src="main.js"></script>
-</body>
-</html>
+</body></html>
