@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose & Oud | Luxury Fragrance Boutique</title>
+    <meta name="description" content="Discover your signature scent at Rose & Oud Fragrance Boutique. Luxurious, timeless, sensual perfumes.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <a href="#" class="logo">Rose & Oud</a>
+        <nav>
+            <ul>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#quiz">Find Your Scent</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Defy Gravity with Our Signature Scents</h1>
+            <p>Experience the ethereal, romantic, and cinematic luxury of Rose & Oud.</p>
+            <a href="#featured" class="cta-btn">Shop the Collection</a>
+        </div>
+        <div class="hero-image-container">
+            <img src="assets/luxury_perfume_bottle.png" alt="Floating luxury perfume bottle in baby pink light" class="hero-image float-animation">
+        </div>
+    </section>
+
+    <section id="featured" class="featured-collection">
+        <h2>Featured Collection</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image-placeholder gold-gradient"></div>
+                <h3>Midnight Oud</h3>
+                <p class="notes">Oud, Rose, Sandalwood</p>
+                <p class="price">$250.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-image-placeholder pink-gradient"></div>
+                <h3>Velvet Rose</h3>
+                <p class="notes">Damascus Rose, Peony, Musk</p>
+                <p class="price">$195.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <div class="product-image-placeholder cream-gradient"></div>
+                <h3>Golden Vanilla</h3>
+                <p class="notes">Madagascar Vanilla, Amber, Tonka Bean</p>
+                <p class="price">$180.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="quiz" class="scent-quiz">
+        <div class="quiz-container">
+            <h2>Find Your Scent</h2>
+            <p>Answer a few questions to discover your perfect fragrance.</p>
+            
+            <div id="quiz-form" class="quiz-card">
+                <h3 id="quiz-question">What mood do you want to evoke?</h3>
+                <div class="quiz-options">
+                    <!-- Options populated by JS -->
+                </div>
+            </div>
+            
+            <div id="quiz-result" class="quiz-card hidden">
+                <h3>Your Signature Scent is:</h3>
+                <h2 id="result-title">Velvet Rose</h2>
+                <p>We recommend a sample kit to explore similar notes.</p>
+                <button class="cta-btn" onclick="resetQuiz()">Retake Quiz</button>
+            </div>
+        </div>
+    </section>
+
+    <footer id="about">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Rose & Oud</h4>
+                <p>Luxurious, sensual, timeless fragrances.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Experience</h4>
+                <ul>
+                    <li>Returns within 14 days (unopened items)</li>
+                    <li>Domestic Shipping: 3-5 business days</li>
+                    <li>International: 7-14 business days</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>Email: experience@roseandoud.com</p>
+                <p>Response within 4 business hours</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Rose & Oud Fragrance Boutique. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
